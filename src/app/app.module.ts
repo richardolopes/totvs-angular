@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,13 @@ import { NotfoundComponent } from './notfound/notfound.component';
     HomeComponent,
     AboutComponent,
     RestaurantsComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    RestaurantComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
