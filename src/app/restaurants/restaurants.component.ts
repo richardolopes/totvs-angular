@@ -7,7 +7,7 @@ import { RestaurantsService } from './restaurants.service';
 })
 export class RestaurantsComponent implements OnInit {
 
-  public listRestaurants = [];
+  public listRestaurants: any;
 
   constructor(private negocioRestaurant: RestaurantsService) {
     this.negocioRestaurant.listRestaurants().subscribe( result => {

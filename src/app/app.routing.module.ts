@@ -4,11 +4,18 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { RestaurantDetailComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail.component';
+import { RestaurantDetailReviewComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-review/restaurant-detail-review.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'about', component: AboutComponent},
   {path: 'restaurants', component: RestaurantsComponent},
+  {path: 'restaurants/:id', component: RestaurantDetailComponent,
+    children: [{
+      path: 'review', component: RestaurantDetailReviewComponent
+    }]
+  },
   {path: '**', component: NotfoundComponent},
 ];
 

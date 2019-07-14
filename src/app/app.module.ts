@@ -11,6 +11,8 @@ import { RestaurantsComponent } from './restaurants/restaurants.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { RestaurantComponent } from './restaurants/restaurant/restaurant.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RestaurantDetailComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail.component';
+import { RestaurantDetailReviewComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-review/restaurant-detail-review.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HttpClientModule } from '@angular/common/http';
     AboutComponent,
     RestaurantsComponent,
     NotfoundComponent,
-    RestaurantComponent
+    RestaurantComponent,
+    RestaurantDetailComponent,
+    RestaurantDetailReviewComponent
   ],
   imports: [
     BrowserModule,
