@@ -1,0 +1,10 @@
+<div class="col-md-9 col-xs-12" *ngFor="let item of menu">
+
+  <app-menu-item (add)="expondo($event)" [menu]="item"></app-menu-item>
+
+</div>
+<div class="col-md-3 col-xs-12">
+
+  <app-menu-cart></app-menu-cart>
+
+</div>

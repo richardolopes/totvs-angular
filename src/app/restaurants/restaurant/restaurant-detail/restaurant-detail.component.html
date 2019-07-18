@@ -19,7 +19,7 @@
         <!-- /.box-header -->
         <div class="box-body">
           <div class="col-sm-3 col-xl-12">
-            <img class="box-img-detail" *ngIf="detail?.imagePath" src="assets/img/restaurants/icy.png" />
+            <img class="box-img-detail" *ngIf="detail?.imagePath" [src]="detail?.imagePath" />
           </div>
           <dl class="col-sm-9 col-xl-12">
             <dt>Categoria</dt>
@@ -32,10 +32,10 @@
         </div>
         <!-- /.box-body -->
         <div class="box-footer detail-footer">
-          <a class="pull-left" >
+          <a class="pull-left" routerLinkActive="detail-active" [routerLink]="['menu']">
             Menu
           </a>
-          <a class="pull-right" [routerLink]="['review']">
+          <a class="pull-right" routerLinkActive="detail-active" [routerLink]="['review']">
             Avaliações
           </a>
         </div>

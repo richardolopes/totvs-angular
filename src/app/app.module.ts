@@ -13,6 +13,9 @@ import { RestaurantComponent } from './restaurants/restaurant/restaurant.compone
 import { HttpClientModule } from '@angular/common/http';
 import { RestaurantDetailComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail.component';
 import { RestaurantDetailReviewComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-review/restaurant-detail-review.component';
+import { RestaurantDetailMenuComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/restaurant-detail-menu.component';
+import { MenuItemComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/menu-item/menu-item.component';
+import { MenuCartComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/menu-cart/menu-cart.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,10 @@ import { RestaurantDetailReviewComponent } from './restaurants/restaurant/restau
     NotfoundComponent,
     RestaurantComponent,
     RestaurantDetailComponent,
-    RestaurantDetailReviewComponent
+    RestaurantDetailReviewComponent,
+    RestaurantDetailMenuComponent,
+    MenuItemComponent,
+    MenuCartComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { RestaurantDetailComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail.component';
 import { RestaurantDetailReviewComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-review/restaurant-detail-review.component';
+import { RestaurantDetailMenuComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/restaurant-detail-menu.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +18,7 @@ const routes: Routes = [
         path: 'review', component: RestaurantDetailReviewComponent
       },
       {
-        path: 'menu', component:
+        path: 'menu', component: RestaurantDetailMenuComponent
       }
     ]
   },

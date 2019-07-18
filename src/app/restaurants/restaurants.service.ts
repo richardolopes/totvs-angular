@@ -19,4 +19,8 @@ export class RestaurantsService {
   reviewById(id: string) {
     return this.http.get(`http://localhost:3000/restaurants/${id}/reviews`);
   }
+
+  menuById(id: string) {
+    return this.http.get(`http://localhost:3000/restaurants/${id}/menu`);
+  }
 }
