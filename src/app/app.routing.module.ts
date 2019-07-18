@@ -12,9 +12,14 @@ const routes: Routes = [
   {path: 'about', component: AboutComponent},
   {path: 'restaurants', component: RestaurantsComponent},
   {path: 'restaurants/:id', component: RestaurantDetailComponent,
-    children: [{
-      path: 'review', component: RestaurantDetailReviewComponent
-    }]
+    children: [
+      {
+        path: 'review', component: RestaurantDetailReviewComponent
+      },
+      {
+        path: 'menu', component:
+      }
+    ]
   },
   {path: '**', component: NotfoundComponent},
 ];

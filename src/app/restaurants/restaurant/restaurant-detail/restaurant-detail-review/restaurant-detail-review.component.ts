@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { RestaurantsService } from 'src/app/restaurants/restaurants.service';
 
 @Component({
   selector: 'app-restaurant-detail-review',
@@ -6,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantDetailReviewComponent implements OnInit {
 
-  constructor() { }
+  public reviews: any;
+
+  constructor(private negocioRestaurant: RestaurantsService, private route: ActivatedRoute) {
+    this.negocioRestaurant.reviewById(this.route.parent.snapshot.params['id']).subscribe( result => {
+      this.reviews = result;
+    });
+   }
 
   ngOnInit() {
   }

@@ -11,4 +11,12 @@ export class RestaurantsService {
   listRestaurants() {
     return this.http.get('http://localhost:3000/restaurants');
   }
+
+  restaurantById(id: string) {
+    return this.http.get(`http://localhost:3000/restaurants/${id}`);
+  }
+
+  reviewById(id: string) {
+    return this.http.get(`http://localhost:3000/restaurants/${id}/reviews`);
+  }
 }
