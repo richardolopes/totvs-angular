@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 
+// @algumacoisa = decorator -> @algcoisa(METADADOS)
 @Component({
   selector: 'app-menu-item',
   templateUrl: './menu-item.component.html'

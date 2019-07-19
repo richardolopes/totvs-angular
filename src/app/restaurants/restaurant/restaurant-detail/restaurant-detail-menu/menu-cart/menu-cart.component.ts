@@ -11,4 +11,8 @@ export class MenuCartComponent implements OnInit {
   ngOnInit() {
   }
 
+  cartTest(item: any) {
+    console.log(item);
+  }
+
 }
