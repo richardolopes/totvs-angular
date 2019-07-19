@@ -1,6 +1,6 @@
 <div class="col-md-9 col-xs-12">
   <div *ngFor="let item of menu">
-    <app-menu-item (add)="cart.cartTest($event)" [menu]="item"></app-menu-item>
+    <app-menu-item (add)="cart.addToCart($event)" [menu]="item"></app-menu-item>
   </div>
 </div>
 <div class="col-md-3 col-xs-12">

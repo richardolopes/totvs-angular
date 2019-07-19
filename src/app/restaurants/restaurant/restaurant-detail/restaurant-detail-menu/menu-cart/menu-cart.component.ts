@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuCartService } from './menu-cart.service';
 
 @Component({
   selector: 'app-menu-cart',
@@ -6,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuCartComponent implements OnInit {
 
-  constructor() { }
+  constructor(private cart: MenuCartService) { }
 
   ngOnInit() {
   }
 
-  cartTest(item: any) {
-    console.log(item);
+  addToCart(item: any) {
+    this.cart.addItem(item);
+  }
+
+  itemsCart() {
+    return this.cart.readyCart();
   }
 
 }
