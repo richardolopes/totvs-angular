@@ -1,3 +1,4 @@
+import { OrderComponent } from './restaurants/restaurant/order/order.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { RestaurantsComponent } from './restaurants/restaurants.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
       }
     ]
   },
+  {path: 'order', component: OrderComponent},
   {path: '**', component: NotfoundComponent},
 ];
 

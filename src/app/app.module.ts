@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app.routing.module';
@@ -16,6 +17,7 @@ import { RestaurantDetailReviewComponent } from './restaurants/restaurant/restau
 import { RestaurantDetailMenuComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/restaurant-detail-menu.component';
 import { MenuItemComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/menu-item/menu-item.component';
 import { MenuCartComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/menu-cart/menu-cart.component';
+import { OrderComponent } from './restaurants/restaurant/order/order.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,14 @@ import { MenuCartComponent } from './restaurants/restaurant/restaurant-detail/re
     RestaurantDetailReviewComponent,
     RestaurantDetailMenuComponent,
     MenuItemComponent,
-    MenuCartComponent
+    MenuCartComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

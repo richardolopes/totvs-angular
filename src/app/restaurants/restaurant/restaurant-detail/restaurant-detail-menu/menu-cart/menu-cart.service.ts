@@ -14,6 +14,10 @@ export class MenuCartService {
     return this.items;
   }
 
+  clearCart() {
+    this.items = [];
+  }
+
   priceCart() {
 
   }

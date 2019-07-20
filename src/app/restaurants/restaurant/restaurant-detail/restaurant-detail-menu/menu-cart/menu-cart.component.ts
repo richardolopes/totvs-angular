@@ -20,4 +20,8 @@ export class MenuCartComponent implements OnInit {
     return this.cart.readyCart();
   }
 
+  clearCart() {
+    this.cart.clearCart();
+  }
+
 }
