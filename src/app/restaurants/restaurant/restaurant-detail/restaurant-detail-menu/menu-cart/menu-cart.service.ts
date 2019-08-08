@@ -1,35 +1,42 @@
 import { Injectable } from '@angular/core';
+import { MenuItem } from 'src/app/model/menu.item.model';
+import { CartItem } from 'src/app/model/cart.item.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MenuCartService {
-  items = [];
-  price = 0;
+  items: Array<CartItem> = [];
 
-  addItem(item: any) {
-    const index: number = this.items.indexOf(item);
+  addItem(item: MenuItem) {
+    const res = this.items.find( (mItem) => mItem.menuItem.id === item.id );
 
-    if (index < 0) {
-      this.items.push(item);
+    if (res) {
+      this.incrementItem(res);
     } else {
-      // this.items[index].push({qtd: 4});
+      this.items.push(new CartItem(item));
     }
-
-    this.price += item.price;
   }
 
-  readyCart() {
+  incrementItem(item: CartItem): void {
+    item.qtd += 1;
+  }
+
+  removeItem(item: CartItem) {
+    this.items.splice(this.items.indexOf(item), 1);
+  }
+
+  readyCart(): Array<CartItem> {
     return this.items;
   }
 
-  clearCart() {
+  clearCart(): void {
     this.items = [];
-    this.price = 0;
   }
 
-  priceCart() {
-    return this.price.toFixed(2);
+  priceCart(): number {
+    return this.items.map( (item) => item.valor())
+    .reduce((prev, value) => prev + value, 0);
   }
 
   constructor() { }

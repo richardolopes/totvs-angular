@@ -6,9 +6,6 @@ import { MenuCartService } from './menu-cart.service';
   templateUrl: './menu-cart.component.html'
 })
 export class MenuCartComponent implements OnInit {
-
-  priceCart: any;
-
   constructor(private cart: MenuCartService) { }
 
   ngOnInit() {
@@ -18,6 +15,10 @@ export class MenuCartComponent implements OnInit {
   addToCart(item: any) {
     this.cart.addItem(item);
     this.calcPriceCart();
+  }
+
+  removeItemCart(item) {
+    this.cart.removeItem(item);
   }
 
   itemsCart() {
@@ -30,11 +31,7 @@ export class MenuCartComponent implements OnInit {
   }
 
   calcPriceCart() {
-    if (this.cart.priceCart() === '0.00') {
-      this.priceCart = 'O carrinho está vazio';
-    } else {
-      this.priceCart = 'R$ ' + this.cart.priceCart();
-    }
+    return this.cart.priceCart();
   }
 
 }

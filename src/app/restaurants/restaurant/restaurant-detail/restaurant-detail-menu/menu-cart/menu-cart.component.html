@@ -7,16 +7,24 @@
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-    <div class="table-responsive">
+
+    <div *ngIf="!itemsCart().length">
+      <p class="text-center">
+        Seu carrinho está vazio
+      </p>
+    </div>
+
+    <div class="table-responsive" *ngIf="itemsCart().length">
       <table class="table">
         <tbody>
           <tr *ngFor="let item of itemsCart()">
-            <th style="width:60%">{{ item.name }}</th>
-            <td class="text-right">R$ {{ item.price }}</td>
+            <th style="width:60%">{{ item.qtd }}x {{ item.menuItem.name }}</th>
+            <td class="text-right">{{ item.valor() | currency: 'BRL' : true }}</td>
+            <td class="text-right"> <a (click)="removeItemCart(item)" class="btn btn-link">x</a> <i class="fa fa-times"></i></td>
           </tr>
           <tr>
             <th>Total:</th>
-            <td class="text-right">{{ priceCart }}</td>
+            <td class="text-right">{{ calcPriceCart() | currency: 'BRL' : true }}</td>
           </tr>
         </tbody>
       </table>
