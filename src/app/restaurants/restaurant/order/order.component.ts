@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { MenuCartService } from '../restaurant-detail/restaurant-detail-menu/menu-cart/menu-cart.service';
 
 @Component({
   selector: 'app-order',
@@ -9,7 +10,12 @@ export class OrderComponent implements OnInit {
 
   orderForm: FormGroup;
 
-  constructor(private form: FormBuilder) { }
+  public itemsCart: any;
+
+  constructor(private form: FormBuilder, private cart: MenuCartService) {
+    this.itemsCart = this.cart.readyCart();
+    console.log(this.itemsCart);
+  }
 
   ngOnInit() {
     this.orderForm = this.form.group({
@@ -26,12 +32,10 @@ export class OrderComponent implements OnInit {
         Validators.required
       ])
     });
-
-    console.log(this.orderForm);
   }
 
   send() {
-    console.log(this.orderForm);
+
   }
 
 }
