@@ -1,21 +1,25 @@
 <!-- INíCIO do CONTEÚDO -->
 <section class="content-header">
-  <h1>
-    Todos os Restaurantes
-  </h1>
+  <div class="row">
+    <div class="col-sm-6 col-xs-12">
+      <h1>
+        Todos os Restaurantes
+      </h1>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+      <div class="form-group">
+        <span class="help-block">Procure o restaurante:</span>
+        <input formControlName="restaurant" type="text" class="form-control" placeholder="Digite o nome do restaurante">
+      </div>
+    </div>
+  </div>
 </section>
 
-
 <section class="content">
-
   <div class="row">
     <div class="col-sm-4 col-xs-12" *ngFor="let item of listRestaurants">
       <app-restaurant [restaurant]="item"></app-restaurant>
     </div>
-
-
   </div>
-
 </section>
-
 <!-- FIM  do CONTEÚDO -->

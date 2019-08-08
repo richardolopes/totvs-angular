@@ -15,14 +15,8 @@
             <td class="text-right">R$ {{ item.price }}</td>
           </tr>
           <tr>
-            <th>Frete:</th>
-
-            <td class="text-right">R$ 8,00</td>
-          </tr>
-          <tr>
             <th>Total:</th>
-
-            <td class="text-right">R$ 80,90</td>
+            <td class="text-right">{{ priceCart }}</td>
           </tr>
         </tbody>
       </table>
@@ -31,6 +25,7 @@
   <div class="box-footer">
     <div class="pull-right">
       <button (click)="clearCart()" type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
+      &nbsp;
       <a [routerLink]="['/order']" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
     </div>
   </div>
