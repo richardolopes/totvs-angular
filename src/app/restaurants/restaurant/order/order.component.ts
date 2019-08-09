@@ -14,7 +14,6 @@ export class OrderComponent implements OnInit {
 
   constructor(private form: FormBuilder, private cart: MenuCartService) {
     this.itemsCart = this.cart.readyCart();
-    console.log(this.itemsCart);
   }
 
   ngOnInit() {
@@ -25,10 +24,11 @@ export class OrderComponent implements OnInit {
       ]),
       number: this.form.control('', [
         Validators.minLength(1),
-        Validators.required
+        Validators.required,
+        Validators.pattern('^[0-9]+$')
       ]),
       complement: this.form.control('', [
-        Validators.minLength(3),
+        Validators.minLength(4),
         Validators.required
       ])
     });
@@ -36,6 +36,14 @@ export class OrderComponent implements OnInit {
 
   send() {
 
+  }
+
+  minus(item) {
+    this.cart.degradeItem(item);
+  }
+
+  plus(item) {
+    this.cart.incrementItem(item);
   }
 
 }

@@ -22,6 +22,14 @@ export class MenuCartService {
     item.qtd += 1;
   }
 
+  degradeItem(item: CartItem): void {
+    if (item.qtd > 1) {
+      item.qtd -= 1;
+    } else {
+      this.removeItem(item);
+    }
+  }
+
   removeItem(item: CartItem) {
     this.items.splice(this.items.indexOf(item), 1);
   }

@@ -1,0 +1,5 @@
+<div class="form-group" [class.has-success]="valid()" [class.has-error]="invalid()">
+  <ng-content></ng-content>
+  <span *ngIf="invalid()" class="help-block"><i class="fa fa-remove"></i> {{ mensagem }}</span>
+  <span *ngIf="valid()" class="help-block"><i class="fa fa-check"></i> Ok</span>
+</div>

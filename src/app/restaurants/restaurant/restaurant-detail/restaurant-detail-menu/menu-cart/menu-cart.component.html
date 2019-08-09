@@ -30,7 +30,7 @@
       </table>
     </div>
   </div>
-  <div class="box-footer">
+  <div class="box-footer" *ngIf="itemsCart().length">
     <div class="pull-right">
       <button (click)="clearCart()" type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
       &nbsp;
