@@ -4,6 +4,7 @@ import { MenuCartService } from '../restaurant-detail/restaurant-detail-menu/men
 import { OrderService } from './order.service';
 import { Order, OrderItems } from './order.model';
 import { CartItem } from 'src/app/model/cart.item.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -15,7 +16,7 @@ export class OrderComponent implements OnInit {
 
   public itemsCart: any;
 
-  constructor(private form: FormBuilder, private cart: MenuCartService, private order: OrderService) {
+  constructor(private form: FormBuilder, private cart: MenuCartService, private order: OrderService, private route: Router) {
     this.itemsCart = this.cart.readyCart();
   }
 
@@ -42,8 +43,8 @@ export class OrderComponent implements OnInit {
       return new OrderItems(item.qtd, item.menuItem.id)
     });
 
-    this.order.finalizeOrder(order).subscribe( () => {
-      console.log(order);
+    this.order.finalizeOrder(order).subscribe((order: Order) => {
+      this.route.navigate(['/order/finish/', order.id]);
     });
   }
 

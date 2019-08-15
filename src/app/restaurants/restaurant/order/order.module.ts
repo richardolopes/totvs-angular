@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { OrderComponent } from './order.component';
 import { Routes, RouterModule } from '@angular/router';
+import { OrderFinishComponent } from './order-finish/order-finish.component';
 
 const routes: Routes = [
-  {path: '', component: OrderComponent}
+  {path: '', component: OrderComponent},
+  {path: 'finish/:id', component: OrderFinishComponent}
 ];
 
 @NgModule({
-  declarations: [OrderComponent],
+  declarations: [OrderComponent, OrderFinishComponent],
   imports: [
     CommonModule,
     SharedModule,

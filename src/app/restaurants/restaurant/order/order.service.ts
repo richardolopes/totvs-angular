@@ -12,9 +12,7 @@ export class OrderService {
 
   finalizeOrder(order: Order) {
     return this.http.post('http://localhost:3000/orders', order).pipe(
-      map(response => {
-        
-      })
+      map(response => response)
     );
   }
 }
