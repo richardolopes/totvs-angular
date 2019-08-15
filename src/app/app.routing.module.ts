@@ -14,6 +14,9 @@ const routes: Routes = [
   {path: 'restaurants/:id', component: RestaurantDetailComponent,
     children: [
       {
+        path: '', redirectTo: 'menu', pathMatch: 'full'
+      },
+      {
         path: 'review', component: RestaurantDetailReviewComponent
       },
       {

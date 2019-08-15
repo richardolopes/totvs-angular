@@ -18,6 +18,10 @@ export class InputComponent implements OnInit, AfterContentInit {
 
   ngAfterContentInit(): void {
     this.input = this.control;
+
+    if (this.input === undefined) {
+      throw new Error('Esse componente precisa ser usado com uma diretiva FormControlName');
+    }
   }
 
   valid() {

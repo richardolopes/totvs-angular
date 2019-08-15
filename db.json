@@ -370,5 +370,15 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": 1
+    },
+    {
+      "address": "AV BRAZ LEME",
+      "number": "312",
+      "complement": "TESTE ",
+      "id": 2
+    }
+  ]
 }

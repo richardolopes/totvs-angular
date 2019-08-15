@@ -129,7 +129,7 @@
               <tbody>
                 <tr>
                   <th style="width:50%">Itens:</th>
-                  <td class="text-right">{{ item.qtd }}</td>
+                  <!-- <td class="text-right">{{ item.qtd }}</td> -->
                 </tr>
                 <tr>
                   <th>Frete:</th>
@@ -150,7 +150,7 @@
 
     <div class="row">
       <div class="col-xs-12">
-        <button [disabled]="!orderForm.valid" (click)="send()" class="btn btn-success pull-right"><i
+        <button [disabled]="!orderForm.valid" (click)="send(orderForm.value)" class="btn btn-success pull-right"><i
             class="fa fa-credit-card"></i> Concluir
           Pedido
         </button>

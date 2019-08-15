@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MenuCartService } from '../restaurant-detail/restaurant-detail-menu/menu-cart/menu-cart.service';
+import { OrderService } from './order.service';
+import { Order, OrderItems } from './order.model';
+import { CartItem } from 'src/app/model/cart.item.model';
 
 @Component({
   selector: 'app-order',
@@ -12,7 +15,7 @@ export class OrderComponent implements OnInit {
 
   public itemsCart: any;
 
-  constructor(private form: FormBuilder, private cart: MenuCartService) {
+  constructor(private form: FormBuilder, private cart: MenuCartService, private order: OrderService) {
     this.itemsCart = this.cart.readyCart();
   }
 
@@ -34,8 +37,14 @@ export class OrderComponent implements OnInit {
     });
   }
 
-  send() {
+  send(order: Order) {
+    order.orderItems = this.cart.readyCart().map((item: CartItem) => {
+      return new OrderItems(item.qtd, item.menuItem.id)
+    });
 
+    this.order.finalizeOrder(order).subscribe( () => {
+      console.log(order);
+    });
   }
 
   minus(item) {
