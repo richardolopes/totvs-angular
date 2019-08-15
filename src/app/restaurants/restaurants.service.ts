@@ -1,26 +1,26 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpService } from '../shared/services/http.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestaurantsService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpService) { }
 
   listRestaurants() {
-    return this.http.get('http://localhost:3000/restaurants');
+    return this.http.get('restaurants');
   }
 
   restaurantById(id: string) {
-    return this.http.get(`http://localhost:3000/restaurants/${id}`);
+    return this.http.get(`restaurants/${id}`);
   }
 
   reviewById(id: string) {
-    return this.http.get(`http://localhost:3000/restaurants/${id}/reviews`);
+    return this.http.get(`restaurants/${id}/reviews`);
   }
 
   menuById(id: string) {
-    return this.http.get(`http://localhost:3000/restaurants/${id}/menu`);
+    return this.http.get(`restaurants/${id}/menu`);
   }
 }
