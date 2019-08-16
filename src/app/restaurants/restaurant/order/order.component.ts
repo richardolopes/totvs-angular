@@ -56,4 +56,7 @@ export class OrderComponent implements OnInit {
     this.cart.incrementItem(item);
   }
 
+  total() {
+    this.cart.readyCart();
+  }
 }
