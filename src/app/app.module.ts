@@ -17,10 +17,10 @@ import { RestaurantDetailReviewComponent } from './restaurants/restaurant/restau
 import { RestaurantDetailMenuComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/restaurant-detail-menu.component';
 import { MenuItemComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/menu-item/menu-item.component';
 import { MenuCartComponent } from './restaurants/restaurant/restaurant-detail/restaurant-detail-menu/menu-cart/menu-cart.component';
-import { OrderComponent } from './restaurants/restaurant/order/order.component';
-
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
+import { LoginComponent } from './login/login.component';
+import { IntercepetModule } from './intercept/intercepet.module';
 
 registerLocaleData(localePt, 'pt-BR');
 
@@ -38,13 +38,15 @@ registerLocaleData(localePt, 'pt-BR');
     RestaurantDetailMenuComponent,
     MenuItemComponent,
     MenuCartComponent,
+    LoginComponent,
 ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    IntercepetModule
   ],
   providers: [{provide: LOCALE_ID, useValue: 'pt-BR'}],
   bootstrap: [AppComponent]

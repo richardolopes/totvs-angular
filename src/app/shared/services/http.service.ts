@@ -17,4 +17,8 @@ export class HttpService {
   public post(endpoint: string, body: {}) {
     return this.http.post(this.URL + endpoint, body);
   }
+
+  public auth(login: Login) {
+    return this.http.post('https://apisalas.totvs.com:8888/api/v1/auth/token', login);
+  }
 }

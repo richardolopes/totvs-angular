@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { AboutGuardService } from '../guardian/about-guard.service';
 
 const routes: Routes = [
-  {path: '', component: AboutComponent, canActivate: [AboutGuardService]}
+  {path: '', component: AboutComponent}
 ];
 
 @NgModule({
